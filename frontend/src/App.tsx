@@ -1,14 +1,16 @@
-import './App.css'
-
 function App() {
+    console.log(import.meta.env.VITE_CORE_FRONT_BASE_URL);
+    console.log(import.meta.env.VITE_CORE_API_BASE_URL);
 
-  return (
-    <>
-      <div>
-          <p>테스트임</p>
-      </div>
-    </>
-  )
+    fetch(import.meta.env.VITE_CORE_FRONT_BASE_URL + "/api/v1/test")
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+
+    return (
+        <>
+            <h1>Hello World!!!</h1>
+        </>
+    );
 }
 
-export default App
+export default App;
